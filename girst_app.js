@@ -1,5 +1,6 @@
 console.log("Hello Js");
 
+const { rejects } = require('assert');
 const { log } = require('console');
 const fs = require('fs');
 
@@ -43,3 +44,24 @@ console.log(arr2);
 // Rest operator is opposite of spread operator. 
 
 let BecomeArr = (...args) => [args] // This is not spread oprator this is rest opeator
+
+const obj1 = {'key1': 1, "key2": 2, "key3": 1000}
+
+const { key1, key3} = { ...obj1}
+
+
+
+console.log(key1, key3)
+function letterss(letter){
+    const promise = new Promise ((resolve, reject)=>{
+        setTimeout(()=>{
+            console.log(letter);
+            resolve()},0)
+    })
+}
+letterss("a");
+letterss("b");
+letterss("c");
+letterss("d");
+letterss("e");
+
