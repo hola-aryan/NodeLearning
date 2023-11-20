@@ -1,10 +1,14 @@
+const { log } = require('console');
 const express = require('express');
+const path = require('path');
 
 const router = express.Router();
 
-    router.get('/addProduct',(req,res,next)=>{
-        res.send('<form action="/admin/addProduct" method ="POST"> <input type="text" name="item" placeholder="Add Item"> <input type="number" name="Quantity" placeholder="Quantity"><br> <button type="submit">Submit</button> </form>')
+    router.get('/add-Product',(req,res,next)=>{
+        console.log("Add Product running");
+        res.sendFile(path.join(__dirname,'../','views', 'shop.html'))
     })
+
     
     router.post('/addProduct',(req,res,next)=>{
         console.log(req.body);
